@@ -1,41 +1,28 @@
 import React , { useState , useEffect , useContext } from 'react'
 import { Link, Navigate } from 'react-router-dom';
 import context from './context'
-import Login from './Login';
 import { LoginPage } from './LoginPage';
 
 export const Register = () => {
    
-   const {state,dispatch,setName,setRegister} = useContext(context)
+   const {setName} = useContext(context)
    const [Username, setUsername] = useState("")
    const [Password, setPassword] = useState("")
    const [Address, setAddress] = useState("")
    const [MobileNo, setMobileNo] = useState("")
    const [Email, setEmail] = useState("")
-   const {setFlag} = useContext(context)
-   console.log(state.succ)
-   if(state.succ==1){
-      <LoginPage/>
-   }
+   
    const check=()=>{
       if(Username==="" || Password==="" || Address==="" || MobileNo==="" || Email==="")
       {
          alert("Plz fill in all Registration Details")
       }
-      else{
-        return <>
-
-            { 
-               alert("Register successfully")
-               
-            }
-            
-            {
-               setRegister(1)
-               
-            }
-            <Navigate to="/loginpage"/>
-         </>
+      else
+      {
+         if (window.confirm('Register successfully'))
+         {
+            window.location.href="/"
+         }   
       }
    }
    //const [Name, setName1] = useState("")

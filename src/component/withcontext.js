@@ -22,13 +22,6 @@ const Withcontext = (props) => {
       });
    };
 
-   const setRegister = (succ) => {
-      return dispatch({
-         type: "SETREGISTER",
-         payload: succ,
-      });
-   };
-
    const setName = (Name) => {
       return dispatch({
          type: "SETNAME",
@@ -37,7 +30,7 @@ const Withcontext = (props) => {
    };
    
    return (
-      <context.Provider value={{state , dispatch , setTotal , setName , setFlag , setRegister}}>
+      <context.Provider value={{state , dispatch , setTotal , setName , setFlag }}>
          {props.children}
       </context.Provider>
    )

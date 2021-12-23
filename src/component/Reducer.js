@@ -22,11 +22,6 @@ export const CartReducer=(state,action)=>{
           ...state,
           name:action.payload
         };
-      case "SETREGISTER":
-        return {
-          ...state,
-          succ:action.payload
-        };
       case "SETFLAG":
         return {
           ...state,

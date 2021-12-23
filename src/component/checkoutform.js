@@ -4,6 +4,13 @@ import Header from './Header';
 
 export const Checkoutform = () => {
    const {state,dispatch} = useContext(context)
+   const check=()=>{
+      if (window.confirm('Order Successfully Placed'))
+      {
+         window.location.href="products"
+      }
+   }
+
    return (
       <div>
          <Header/>
@@ -22,7 +29,13 @@ export const Checkoutform = () => {
                   <option>Online payment</option>
                </select>
             </div><br/>
-            <div><button className='button2' onClick={()=>alert("Order Successfully Placed")} >Place Order</button></div>
+            <div><button className='button2' onClick={(e)=>
+               {
+                  e.preventDefault()
+                  check()
+                  //alert("Order Successfully Placed")
+               }
+            } >Place Order</button></div>
          </form>
       </div>
    )
